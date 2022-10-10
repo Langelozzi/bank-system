@@ -9,7 +9,7 @@ public:
 	
 	void deposit(double amount);
 	
-	void withdraw(double amount);
+	bool withdraw(double amount);
 	
 	double checkBalance();
 	

@@ -1,5 +1,7 @@
 #include "BankAccount.h"
 
+using namespace std;
+
 BankAccount::BankAccount()
 {
 	balance = 0;
@@ -15,9 +17,15 @@ void BankAccount::deposit(double amount)
 	balance += amount;
 }
 
-void BankAccount::withdraw(double amount)
+bool BankAccount::withdraw(double amount)
 {
-	balance -= amount;
+	if (balance - amount < 0) {
+		return false;
+	}
+	else {
+		balance -= amount;
+		return true;
+	}
 }
 
 double BankAccount::checkBalance()

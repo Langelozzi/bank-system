@@ -40,11 +40,17 @@ int main() {
 			cout << "How much would you like to withdraw: ";
 			cin >> amount;
 
-			cout << "Old balance: " << account.checkBalance() << endl;
+			double oldBalance = account.checkBalance();
 
-			account.withdraw(amount);
+			bool success = account.withdraw(amount);
 
-			cout << "New balance: " << account.checkBalance() << endl;
+			if (success) {
+				cout << "Old balance: " << oldBalance << endl;
+				cout << "New balance: " << account.checkBalance() << endl;
+			}
+			else {
+				cout << "You can not withdraw more money than you have!" << endl;
+			}
 		}
 	}
 
